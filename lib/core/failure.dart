@@ -1,5 +1,5 @@
 //Clase Sellada para Gestionar los estados de Fallo
-
+// Definición de errores tipados
 //Clase Principal
 sealed class Failure implements Exception {
   const Failure(this.message);
@@ -33,17 +33,11 @@ final class ConflictFailure extends Failure {
 //5. 422
 final class ValidationFailure extends Failure {
   const ValidationFailure(this.fields) : super("Error de Validación");
-  final Map<String,String> fields;
+  final Map<String, String> fields;
 }
 
 //Error Desconocido
-final class UnexpectedFailure extends Failure{
-  const UnexpectedFailure(this.statusCode,super.message);
+final class UnexpectedFailure extends Failure {
+  const UnexpectedFailure(this.statusCode, super.message);
   final int statusCode;
 }
-
-
-
-
-
-

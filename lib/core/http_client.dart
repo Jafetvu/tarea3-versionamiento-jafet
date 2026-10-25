@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:gestor_cafeteria/core/failure.dart';
 import 'package:http/http.dart' as http;
 
+// Cliente HTTP con mapeo de errores
 class ApiClient {
   final http.Client _client;
   final Uri baseUrl;

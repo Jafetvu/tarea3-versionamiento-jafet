@@ -20,6 +20,7 @@ ApiClient client(int status, [Object? body]) {
   );
 }
 
+//Pruebas de errores
 void main() {
   group('Pruebas del cliente', () {
     test('200 -> Exitoso', () async {

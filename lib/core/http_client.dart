@@ -12,6 +12,7 @@ class ApiClient {
   final Duration timeout;
 
   //Clase Client
+  //Se declararon nulables
   ApiClient({
     http.Client? client,
     String? baseUrl,
@@ -28,6 +29,7 @@ class ApiClient {
   Future<dynamic> get(String path) => _send('GET', path);
   Future<dynamic> post(String path, Object body) => _send('POST', path, body);
   Future<dynamic> patch(String path, Object body) => _send('PATCH', path, body);
+  //Ya no hay update
   Future<void> delete(String path) => _send('DELETE', path);
 
   //Funcion SEND -> Mandar la peticion al Servicio, esperar una respuesta y adecuarlo para flutter
@@ -98,6 +100,8 @@ class ApiClient {
         return null;
       }
     }
+
+    //correción del 300
 
     final json = tryDecode(response);
     final code = response.statusCode;
